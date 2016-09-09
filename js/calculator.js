@@ -24,17 +24,22 @@ var calculator = (function () {
             if (typeof a !== 'number' || typeof b !== 'number') {
                 throw new Error('It is not a number');
             }
+            if ( a === 0 && b === 0) {
+              throw new Error('No particular result');
+            }
             return a / b;
         },
         factorialIter: function (n) {
+          var result = 1;
+          var i = 1;
             if (typeof n !== 'number' || n !== Math.floor(n)) {
                 throw new Error('It is not a correct number');
             }
             if (n < 0) {
                 throw new Error('Enter a number greater than zero');
             }
-            var result = 1;
-            for (var i = 1; i <= n; i++) {
+
+            for (i; i <= n; i++) {
                 result = result * i;
             }
             return result;
